@@ -337,8 +337,8 @@ def extract_frames(ffmpeg_dir, video, outDir):
     """
 
     error = ""
-    print('{} -i {} -vsync 0 {}/%06d.png'.format(os.path.join(ffmpeg_dir, "ffmpeg"), video, outDir))
-    retn = os.system('{} -i "{}" -vsync 0 {}/%06d.png'.format(os.path.join(ffmpeg_dir, "ffmpeg"), video, outDir))
+    print('{} -i {} -vsync 0 "{}/%06d.png"'.format(os.path.join(ffmpeg_dir, "ffmpeg"), video, outDir))
+    retn = os.system('{} -i "{}" -vsync 0 "{}/%06d.png"'.format(os.path.join(ffmpeg_dir, "ffmpeg"), video, outDir))
     if retn:
         error = "Error converting file:{}. Exiting.".format(video)
     return error
